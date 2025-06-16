@@ -30,3 +30,8 @@ jobs:
         run: |
           source venv/bin/activate
           black --check .
+
+      - name: Run unit tests with pytest
+        run: |
+          source venv/bin/activate
+          pytest
