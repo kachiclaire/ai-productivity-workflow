@@ -21,17 +21,12 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install black pytest
 
       - name: Format check using Black
-        run: |
-          source venv/bin/activate
-          black --check .
+        run: black --check .
 
       - name: Run unit tests with pytest
-        run: |
-          source venv/bin/activate
-          pytest
+        run: PYTHONPATH=src pytest
