@@ -30,3 +30,9 @@ jobs:
 
       - name: Run unit tests with pytest
         run: PYTHONPATH=src pytest
+
+      - name: Run tests safely
+        run: |
+          PYTHONPATH=src pytest
+        env:
+          OPENAI_API_KEY: dummy-key-for-ci-only
