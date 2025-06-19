@@ -9,6 +9,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 def extract_summary_and_tasks(journal_text: str) -> str:
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
@@ -42,4 +43,3 @@ def extract_summary_and_tasks(journal_text: str) -> str:
     except Exception as e:
         logger.exception("Error communicating with OpenAI")
         raise e
-
