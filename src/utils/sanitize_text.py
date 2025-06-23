@@ -2,6 +2,7 @@
 
 import re
 
+
 def sanitize_smart_characters(text: str) -> str:
     """Replaces smart quotes and other unicode punctuation with ASCII equivalents."""
     replacements = {
@@ -17,7 +18,7 @@ def sanitize_smart_characters(text: str) -> str:
         "–": "-",  # en dash
         "—": "-",  # em dash
         # Non-breaking space
-        "\u00A0": " ",
+        "\u00a0": " ",
     }
 
     for smart, ascii_char in replacements.items():

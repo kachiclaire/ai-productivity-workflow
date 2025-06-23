@@ -9,7 +9,7 @@
 #     api_key = os.getenv("OPENAI_API_KEY")
 #     if not api_key:
 #         raise ValueError("Missing OPENAI_API_KEY in environment. See README.")
-    
+
 #     client = openai(api_key=api_key)
 
 #     response = client.chat.completions.create(
@@ -49,7 +49,10 @@ load_dotenv()
 
 USE_MOCK = os.getenv("USE_MOCK", "False").lower() == "true"
 
-def get_openai_response(prompt: str, model: Literal["gpt-3.5-turbo"] = "gpt-3.5-turbo") -> str:
+
+def get_openai_response(
+    prompt: str, model: Literal["gpt-3.5-turbo"] = "gpt-3.5-turbo"
+) -> str:
     if USE_MOCK:
         # Return mock response for testing or CI
         return """
